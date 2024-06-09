@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Contenedores con Botones</title>
+<style>
+p{
+color: aliceblue;
+
+} 
+button{
+    color: aliceblue; 
+}   
+.container {
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px;
+}
+#container1 {
+  background-color: #FF0000; /* Rojo */
+}
+#container2 {
+  background-color: #00aaff; /* Azul */
+}
+#container3 {
+  background-color: #03ff03; /* Verde */
+}
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: black;
+}
+button:hover {
+  background-color: #ff00ea; /* Amarillo al pasar el mouse */
+}
+</style>
+</head>
+<body>
+
+<div id="container1" class="container">
+<h2>Contenedor Rojo</h2>
+<p>Este es un contenedor rojo con márgenes y relleno personalizados.</p>
+<button onclick="changeColor('container1')">Cambiar Color</button>
+</div>
+
+<div id="container2" class="container">
+<h2>Contenedor Azul</h2>
+<p>Este es un contenedor azul con márgenes y relleno personalizados.</p>
+<button onclick="changeColor('container2')">Cambiar Color</button>
+</div>
+
+<div id="container3" class="container">
+<h2>Contenedor Verde</h2>
+<p>Este es un contenedor verde con relleno y márgenes ajustados</p>
+<button onclick="changeColor('container3')">Cambiar Color</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+function changeColor(containerId) {
+    var colors = ['#FF0000', '#0000FF', '#008000']; // Rojo, Azul, Verde
+    var currentColor = document.getElementById(containerId).style.backgroundColor;
+    var newColor = colors[Math.floor(Math.random() * colors.length)];
+    while(newColor === currentColor) { // Asegura que el nuevo color sea diferente al actual
+        newColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+    document.getElementById(containerId).style.backgroundColor = newColor;
+}
+</script>
+
+</body>
+</html>
